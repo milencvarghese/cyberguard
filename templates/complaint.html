@@ -1,0 +1,74 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> -->
+
+{%include 'adminheader.html'%}
+<section id="hero" class="d-flex align-items-center" style="height: 800px;">
+    <div class="conltainer position-relative" data-aos="fade-up" data-aos-delay="500">
+        <!-- <center>
+                <h1 align="center" style="margin-left: 600px; margin-top: -100px;"><B>COMPLAINT</B></h1>
+            </center> -->
+        {% if data['up']%}
+
+        <form action="" method="post" style="text-align: center; margin-left: 350px; margin-top: -200px;">
+            <table align="center">
+                
+                <tr>
+                    <th style="font-size: 30px;color: rgba(150, 203, 226, 0.444);">COMPLAINT REPLY</th>
+
+                    <td><textarea placeholder="reply" name="reply" class="form-control" cols="28" rows="4"></textarea>
+                    </td>
+                </tr>
+                <tr>
+
+                    <th align="center" colspan="3"><input type="submit" name="submit" class="btn btn-outline-info" style="margin-top: 20px;"></th>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+</section>
+{%else%}
+
+<CENTER>
+    <h1 align="center"><B>COMPLAINT</B></h1>
+    <table align="center" style="width:1500px;"  class="table table-striped table-hover">
+        <tr>
+            <th style="padding: 15px; color:white; background-color: rgba(38, 72, 152, 0.255); font-size: 25px;">SLNO</th>
+            <th style="padding: 15px; color:white; background-color: rgba(38, 72, 152, 0.255); font-size: 25px;">COMPLAINT</th>
+            <th style="padding: 15px; color:white; background-color: rgba(38, 72, 152, 0.255); font-size: 25px;">REPLY</th>
+            <th style="padding: 15px; color:white; background-color: rgba(38, 72, 152, 0.255); font-size: 25px;">DATE</th>
+            <th style="padding: 15px; color:white; background-color: rgba(38, 72, 152, 0.255); font-size: 25px;"></th>
+        </tr>
+
+        {%for i in data['view']%}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{i['complaint']}}</td>
+            <td>{{i['reply']}}</td>
+            <td>{{i['date']}}</td>
+            <td><a href="?action=update&id={{i['complaint_id']}}" class="btn btn-outline-danger">reply</a></td>
+
+        </tr>
+        {%endfor%}
+    </table>
+    {%endif%}
+
+
+</CENTER>
+
+
+
+{%include 'footer.html'%}
+
+
+
+
+<!--     
+</body>
+</html> -->

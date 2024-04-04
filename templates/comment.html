@@ -1,0 +1,42 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> -->
+
+
+    {%include 'adminheader.html'%}
+    <section id="hero" class="d-flex align-items-center"> 
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+                
+</div>
+</section>
+    <table align="center" style="width: 1200px;" class="table">
+        <img src="/static/comment2.png" alt="" class="cam" height="300px" align="center">
+        <h1 align="center"><B>COMMENT  </B></h1>
+        <tr>
+            <th style="padding: 15px; color:rgb(236, 237, 243); background-color: rgba(38, 72, 152, 0.255); font-size: 25px;">COMMENT</th>
+            <th style="padding: 15px; color:white; background-color: rgba(38, 72, 152, 0.255); font-size: 25px;">DATE</th>
+            
+        </tr>
+        {%for i in data['view']%}
+        <tr>
+            <td>{{i['comment']}}</td>
+            <td>{{i['date']}}</td>
+           
+        </tr>
+        {%endfor%}
+    
+
+
+    </table>
+
+
+
+{%include 'footer.html'%}
+    
+<!-- </body>
+</html> -->

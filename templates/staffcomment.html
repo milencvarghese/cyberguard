@@ -1,0 +1,37 @@
+{%include 'staffheader.html'%}
+<section id="hero" class="d-flex align-items-center"> 
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+        <h1 style="color:black">VIEW COMMENT</h1>
+        <h2 style="color: black;">Cyber bullying is bulling. Hiding behind a pretty screen doesn’t <br> make it less hateful. Written words have power.  </h2>
+        <p  style="color: black;">Scroll down to see more content</p>
+        <div style="color: black;margin-left:100px"  class="down-arrow">&#9660;</div>
+        </div>
+        </section>
+        
+<table align="center" style="width: 1200px;" class="table">
+    <h1 align="center"><B>COMMENT  </B></h1>
+    <tr>
+        <th style="padding: 15px; color:white; background-color: rgba(38, 72, 152, 0.255); font-size: 25px;">USER</th>
+
+        <th style="padding: 15px; color:white; background-color: rgba(38, 72, 152, 0.255); font-size: 25px;">COMMENT</th>
+        <th style="padding: 15px; color:white; background-color: rgba(38, 72, 152, 0.255); font-size: 25px;">DATE</th>
+        
+    </tr>
+    {%for i in data['view']%}
+    <tr>
+        <td>{{i['f_name']}}</td>
+        <td>{{i['comment']}}</td>
+        <td>{{i['date']}}</td>
+       
+    </tr>
+    {%endfor%}
+
+
+
+</table>
+
+
+</div>
+</section>
+
+{%include 'footer.html'%}

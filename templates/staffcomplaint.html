@@ -1,0 +1,102 @@
+{%include 'staffheader.html'%}
+<section id="hero" class="d-flex align-items-center"> 
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+        <h1 style="color:black">COMPLAINT CORNER</h1>
+        <h2 style="color: black;">Cyber bullying is bulling. Hiding behind a pretty screen doesn’t <br> make it less hateful. Written words have power.  </h2>
+        <p  style="color: black;">Scroll down to see more content</p>
+        <div style="color: black;margin-left:100px"  class="down-arrow">&#9660;</div>
+
+        {%if data['up']%}
+
+        <form action="" method="post" style="text-align: center;  margin-top: 200px;margin-right: 200px;">
+            <table align="center">
+                
+                <tr>
+                    <th style="font-size: 30px;color: rgba(11, 179, 251, 0.616);">COMPLAINT REPLY</th>
+
+                    <td><textarea placeholder=" ENTER YOUR REPLY" name="reply" class="form-control" cols="28" rows="4"></textarea>
+                    </td>
+                </tr>
+                <tr>
+
+                    <th align="center" colspan="3"><input type="submit" name="submit" class="btn btn-outline-info" style="margin-top: 20px;"></th>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+</section>
+        
+        <!-- <center>
+                <h1 align="center" style="margin-left: 600px; margin-top: -100px;"><B>COMPLAINT</B></h1>
+            </center> -->
+   
+{%else%}
+
+</div>
+</section>
+
+<br><br>
+
+<h2 align="center" style="color: black;">COMPLAINTS</h2>
+
+
+<br><br>
+        
+
+<CENTER>
+
+
+
+   
+    <table align="center" style="width:1000px;" >
+        <tr style="background-color: blue;">
+            <th >SLNO</th>
+            <th >COMPLAINT</th>
+            <th>USER NAME</th>
+            <th >REPLY</th>
+            <th >DATE</th>
+        </tr>
+
+        {%for i in data['view']%}
+        <tr >
+            <td >{{loop.index}}</td>
+           
+            <td>{{i['complaint']}}</td>
+            <td>{{i['f_name']}}</td>
+            <td>{{i['reply']}}</td>
+            <td>{{i['date']}}</td>
+            {%if i['reply']=='pending'%}
+            
+            <td><a href="?action=update&id={{i['complaint_id']}}" class="btn btn-info">reply</a></td>
+            {%else%}
+            <td></td>
+            {%endif%}
+            
+
+
+        </tr>
+        {%endfor%}
+    </table>
+    {%endif%}
+
+</CENTER>
+
+
+
+
+<br><br><br><br><br>
+
+
+<style>
+    th{
+        color: white;
+    }
+    td{
+        color: black;
+    }
+</style>
+
+
+
+{%include 'footer.html'%}

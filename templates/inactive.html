@@ -1,0 +1,66 @@
+{%include 'adminheader.html'%}
+
+
+<section id="hero" class="d-flex align-items-center"> 
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+      <h1 style="color:black">VIEW STAFFS</h1>
+     <h2 style="color: black;">"A great staff is the heartbeat of any successful organization." </h2>
+     <p  style="color: black;">Scroll down to see more content</p>
+     <div style="color: black;margin-left:100px"  class="down-arrow">&#9660;</div>
+
+      </div>
+  </section>
+  <div>
+
+   
+</div>
+</section>
+
+
+
+<style>
+    form{
+        margin-left: 600px;
+    }
+    th{
+        color: rgb(255, 255, 255);
+    }
+    
+</style>
+
+<img src="../static/staffnew.png" height="300px" alt="">
+
+<h3 align="right" style="text-decoration: solid;color:rgb(93, 109, 178); margin-right: 100px;margin-top: -200px;">“Challenges are what make life interesting and <br> overcoming them is what makes life meaningful.” </h3>
+
+
+
+<table align="center"  style="width: 1200px;margin-top: 100px;" class="table">
+    <h1 align="center"  style="text-decoration: solid;color:black; margin-top: 100px; ">STAFF DETAILS</h1>
+
+    
+    <tr>
+        <th >STAFF ID</th>
+        <th >FIRST NAME</th>
+        <th >LAST NAME</th>
+        <th >PHONE NUMBER</th>
+        
+    </tr>
+    {%for i in data['view']%}
+    <tr>
+        <td>{{i['staff_id']}}</td>
+        <td>{{i['first_name']}}</td>
+        <td>{{i['last_name']}}</td>
+        <td>{{i['phone_number']}}</td>
+        
+
+    </tr>
+
+    {%endfor%}
+
+</table>
+
+
+
+
+{%include 'footer.html'%}
+  

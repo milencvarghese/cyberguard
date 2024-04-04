@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> -->
+
+
+    
+    {%include 'adminheader.html'%}
+    <section id="hero" class="d-flex align-items-center"> 
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+            <h1 style="color:black">VIEW USERS</h1>
+           <h2 style="color: black;">"Users are the heartbeat of innovation <Br>driving progress with every click and interaction."  </h2>
+           <p  style="color: black;">Scroll down to see more content</p>
+           <div style="color: black;margin-left:100px"  class="down-arrow">&#9660;</div>
+
+</div>
+</section>
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+  
+          <div class="section-title">
+
+            <img src="../static/user (2).png" height="300px" alt="">
+            
+            <h2><B>VIEW USER </B></h2>
+          </div>
+  
+          <div class="row">
+            
+  
+  
+  
+             
+  
+          
+  
+           
+
+<table align="center" style="width: 1200px;" class="table">
+
+    <tr>
+        <th style="padding: 15px; color:rgb(0, 0, 0); font-size: 15px; "> SLNO</th>
+
+        <th style="padding: 15px; color:rgb(0, 0, 0); font-size: 15px; ">FIRST NAME</th>
+        <th style="padding: 15px; color:rgb(0, 0, 0); font-size: 15px; ">LAST NAME</th>
+        <th style="padding: 15px; color:rgb(0, 0, 0); font-size: 15px; ">PLACE</th>
+        <th style="padding: 15px; color:rgb(0, 0, 0); font-size: 15px; ">PHONE</th>
+        <th style="padding: 15px; color:rgb(0, 0, 0); font-size: 15px; ">E-MAIL</th>
+    </tr>
+    {%for i in data['view']%}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{i['f_name']}}</td>
+        <td>{{i['l_name']}}</td>
+        <td>{{i['place']}}</td>
+        <td>{{i['phone']}}</td>
+        <td>{{i['email']}}</td>
+    </tr>
+    {%endfor%}
+</table>
+
+
+  
+</div>
+  
+</div>
+</section><!-- End Services Section -->
+
+{%include 'footer.html'%}
+    
+
+
+
+
+
+
+
+
+    </table>
+</body>
+</html>
